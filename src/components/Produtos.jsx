@@ -1,11 +1,12 @@
 import { useEffect, useMemo, useState } from 'react'
 import ProductCard from './ProductCard.jsx'
+import { useSearch } from '../context/SearchContext.jsx'
 
 export default function Produtos() {
   const [produtos, setProdutos] = useState([])
   const [carregando, setCarregando] = useState(true)
-  const [busca, setBusca] = useState('')
   const [categoria, setCategoria] = useState('Todas')
+  const { busca } = useSearch()
 
   useEffect(() => {
     fetch('/data/produtos.json')
@@ -35,14 +36,6 @@ export default function Produtos() {
         </div>
 
         <div className="produtos-controles">
-          <input
-            type="search"
-            className="produtos-busca"
-            placeholder="Buscar produto (ex: tomate)"
-            value={busca}
-            onChange={(evento) => setBusca(evento.target.value)}
-            aria-label="Buscar produto"
-          />
           <div className="produtos-filtros">
             {categorias.map((c) => (
               <button
