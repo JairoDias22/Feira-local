@@ -1,10 +1,10 @@
 [
-  { "id": 1, "nome": "Tomate", "categoria": "Legumes", "preco": "R$ 6,00/kg", "produtor": "João da Silva", "emoji": "🍅" },
-  { "id": 2, "nome": "Milho verde", "categoria": "Grãos", "preco": "R$ 4,50/kg", "produtor": "Sítio Boa Vista", "emoji": "🌽" },
-  { "id": 3, "nome": "Cenoura", "categoria": "Legumes", "preco": "R$ 3,80/kg", "produtor": "Maria das Neves", "emoji": "🥕" },
-  { "id": 4, "nome": "Banana-prata", "categoria": "Frutas", "preco": "R$ 5,00/kg", "produtor": "Sítio Boa Vista", "emoji": "🍌" },
-  { "id": 5, "nome": "Ovos caipiras", "categoria": "Derivados", "preco": "R$ 7,50/dz", "produtor": "Chácara Esperança", "emoji": "🥚" },
-  { "id": 6, "nome": "Alface", "categoria": "Verduras", "preco": "R$ 4,00/kg", "produtor": "Maria das Neves", "emoji": "🥬" },
-  { "id": 7, "nome": "Manga", "categoria": "Frutas", "preco": "R$ 5,50/kg", "produtor": "Sítio Boa Vista", "emoji": "🥭" },
-  { "id": 8, "nome": "Pimentão", "categoria": "Legumes", "preco": "R$ 6,50/kg", "produtor": "João da Silva", "emoji": "🫑" }
+  { "id": 1, "nome": "Tomate", "categoria": "Legumes", "preco": "R$ 6,00/kg", "produtor": "João da Silva", "produtorId": 1, "emoji": "🍅" },
+  { "id": 2, "nome": "Milho verde", "categoria": "Grãos", "preco": "R$ 4,50/kg", "produtor": "Sítio Boa Vista", "produtorId": 3, "emoji": "🌽" },
+  { "id": 3, "nome": "Cenoura", "categoria": "Legumes", "preco": "R$ 3,80/kg", "produtor": "Maria das Neves", "produtorId": 2, "emoji": "🥕" },
+  { "id": 4, "nome": "Banana-prata", "categoria": "Frutas", "preco": "R$ 5,00/kg", "produtor": "Sítio Boa Vista", "produtorId": 3, "emoji": "🍌" },
+  { "id": 5, "nome": "Ovos caipiras", "categoria": "Derivados", "preco": "R$ 7,50/dz", "produtor": "Chácara Esperança", "produtorId": 4, "emoji": "🥚" },
+  { "id": 6, "nome": "Alface", "categoria": "Verduras", "preco": "R$ 4,00/kg", "produtor": "Maria das Neves", "produtorId": 2, "emoji": "🥬" },
+  { "id": 7, "nome": "Manga", "categoria": "Frutas", "preco": "R$ 5,50/kg", "produtor": "Sítio Boa Vista", "produtorId": 3, "emoji": "🥭" },
+  { "id": 8, "nome": "Pimentão", "categoria": "Legumes", "preco": "R$ 6,50/kg", "produtor": "João da Silva", "produtorId": 1, "emoji": "🫑" }
 ]

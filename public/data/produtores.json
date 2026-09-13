@@ -4,20 +4,31 @@
     "nome": "João da Silva",
     "local": "Bacabal – MA",
     "descricao": "Produção familiar de hortaliças há mais de 15 anos, com foco em técnicas sustentáveis de manejo do solo.",
-    "produtos": "Tomate · Pimentão · Couve"
+    "produtos": "Tomate · Pimentão · Couve",
+    "whatsapp": "5598900000001"
   },
   {
     "id": 2,
     "nome": "Maria das Neves",
     "local": "Bacabal – MA",
     "descricao": "Cultiva raízes e folhosas sem uso de agrotóxicos, priorizando adubação orgânica e rotação de culturas.",
-    "produtos": "Cenoura · Alface · Rúcula"
+    "produtos": "Cenoura · Alface · Rúcula",
+    "whatsapp": "5598900000002"
   },
   {
     "id": 3,
     "nome": "Sítio Boa Vista",
     "local": "Região metropolitana",
     "descricao": "Produção diversificada de frutas e grãos, com parte da colheita destinada a projetos comunitários locais.",
-    "produtos": "Milho · Banana · Manga"
+    "produtos": "Milho · Banana · Manga",
+    "whatsapp": "5598900000003"
+  },
+  {
+    "id": 4,
+    "nome": "Chácara Esperança",
+    "local": "Bacabal – MA",
+    "descricao": "Criação de aves caipiras soltas, com alimentação natural e sem uso de hormônios.",
+    "produtos": "Ovos caipiras",
+    "whatsapp": "5598900000004"
   }
 ]

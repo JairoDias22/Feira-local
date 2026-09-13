@@ -1,12 +1,11 @@
-// Número de WhatsApp da FeiraLocal para onde o pedido é enviado.
-// Formato: código do país + DDD + número, só dígitos (sem espaços, +, ( ) ou -).
-// Exemplo real: "5599999999999" (55 = Brasil, 99 = DDD, restante o número).
-// TROQUE pelo número real da equipe/produtor antes de publicar.
-export const NUMERO_WHATSAPP = '5599999999999'
+// Número de WhatsApp usado como reserva, caso um produtor ainda não tenha
+// um número cadastrado em public/data/produtores.json.
+// Formato: código do país + DDD + número, só dígitos.
+export const NUMERO_WHATSAPP_PADRAO = '5599999999999'
 
-export function montarLinkWhatsApp(itensCarrinho) {
+export function montarLinkWhatsApp(itensCarrinho, numeroWhatsApp) {
   const linhas = itensCarrinho.map(
-    (item) => `• ${item.quantidade}x ${item.nome} (${item.preco}) — ${item.produtor}`
+    (item) => `• ${item.quantidade}x ${item.nome} (${item.preco})`
   )
   const mensagem = [
     'Olá! Vim pela FeiraLocal e gostaria de comprar:',
@@ -16,5 +15,6 @@ export function montarLinkWhatsApp(itensCarrinho) {
     'Pode me ajudar a fechar esse pedido?',
   ].join('\n')
 
-  return `https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(mensagem)}`
+  const numero = numeroWhatsApp || NUMERO_WHATSAPP_PADRAO
+  return `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`
 }

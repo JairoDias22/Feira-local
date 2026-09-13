@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Produtores() {
   const [produtores, setProdutores] = useState([])
@@ -24,13 +25,14 @@ export default function Produtores() {
 
         <div className="produtores-grid">
           {produtores.map((produtor) => (
-            <article className="producer-card" key={produtor.id}>
+            <Link to={`/produtor/${produtor.id}`} className="producer-card producer-card--link" key={produtor.id}>
               <div className="producer-avatar" aria-hidden="true">👤</div>
               <h3>{produtor.nome}</h3>
               <p className="producer-location">📍 {produtor.local}</p>
               <p>{produtor.descricao}</p>
               <p className="producer-tags">{produtor.produtos}</p>
-            </article>
+              <span className="producer-ver-mais">Ver perfil e produtos →</span>
+            </Link>
           ))}
         </div>
       </div>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useFavorites } from '../context/FavoritesContext.jsx'
 import { useCart } from '../context/CartContext.jsx'
 
@@ -20,7 +21,13 @@ export default function ProductCard({ produto }) {
       <span className="price-tag">{produto.preco}</span>
       <p className="product-thumb" aria-hidden="true">{produto.emoji}</p>
       <h3>{produto.nome}</h3>
-      <p className="product-producer">{produto.produtor}</p>
+      {produto.produtorId ? (
+        <Link to={`/produtor/${produto.produtorId}`} className="product-producer product-producer--link">
+          {produto.produtor}
+        </Link>
+      ) : (
+        <p className="product-producer">{produto.produtor}</p>
+      )}
       <button
         type="button"
         className="add-cart-btn"

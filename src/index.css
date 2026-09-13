@@ -253,8 +253,36 @@ a {
   background: #25D366;
   color: #fff;
 }
+.cart-continuar-btn { margin-top: 0.25rem; }
 .cart-checkout-btn:hover { background: #1DA851; }
 .cart-aviso { font-size: 0.75rem; color: #5c5142; margin-top: 0.6rem; text-align: center; }
+.cart-aviso--topo {
+  background: #EFE3C8;
+  border-radius: 10px;
+  padding: 0.6rem 0.8rem;
+  margin: 0 0 1rem 0;
+  text-align: left;
+}
+
+.cart-grupo {
+  border: 1px solid #EFE3C8;
+  border-radius: 12px;
+  padding: 0.9rem;
+  margin-bottom: 1rem;
+}
+.cart-grupo-titulo {
+  margin: 0 0 0.4rem 0;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #24402F;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.cart-grupo .cart-checkout-btn {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  padding: 0.55rem 0.8rem;
+}
 
 /* Botões */
 .btn {
@@ -389,6 +417,13 @@ a {
 .product-thumb { font-size: 2.4rem; line-height: 1; margin: 0 0 0.5rem 0; }
 .product-card h3 { font-size: 1rem; margin-bottom: 0.15rem; }
 .product-producer { font-size: 0.8rem; color: #24402F; margin: 0; }
+.product-producer--link {
+  display: inline-block;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+.product-producer--link:hover { color: #B5482B; }
 
 .favorite-btn {
   position: absolute;
@@ -415,6 +450,13 @@ a {
   border-radius: 14px;
   box-shadow: 0 4px 0 rgba(43, 33, 24, 0.12);
   padding: 1.75rem;
+  display: block;
+}
+.producer-card--link {
+  transition: transform 0.15s ease;
+}
+.producer-card--link:hover {
+  transform: translateY(-3px);
 }
 .producer-avatar {
   width: 52px; height: 52px;
@@ -424,9 +466,40 @@ a {
   font-size: 1.3rem;
   margin-bottom: 1rem;
 }
+.producer-avatar--grande { width: 72px; height: 72px; font-size: 1.8rem; }
 .producer-card h3 { font-size: 1.1rem; margin-bottom: 0.15rem; }
 .producer-location { font-size: 0.8rem; color: #B5482B; margin-bottom: 0.75rem; }
 .producer-tags { font-size: 0.8rem; font-weight: 600; color: #24402F; margin: 0.75rem 0 0 0; }
+.producer-ver-mais {
+  display: block;
+  margin-top: 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #B5482B;
+}
+
+/* Perfil do produtor */
+.section-perfil { background: #fff; min-height: 60vh; }
+.perfil-voltar {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #24402F;
+}
+.perfil-cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+}
+.perfil-descricao { max-width: 640px; margin-bottom: 2.5rem; }
+.perfil-subtitulo {
+  font-family: "Fraunces", Georgia, serif;
+  color: #24402F;
+  font-size: 1.4rem;
+  margin-bottom: 1.25rem;
+}
 
 /* Estação */
 .section-estacao { background: #EFE3C8; }

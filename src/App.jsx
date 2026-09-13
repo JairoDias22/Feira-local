@@ -5,6 +5,7 @@ import CartModal from './components/CartModal.jsx'
 import ScrollToHash from './components/ScrollToHash.jsx'
 import Home from './pages/Home.jsx'
 import Favoritos from './pages/Favoritos.jsx'
+import ProdutorPerfil from './pages/ProdutorPerfil.jsx'
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/favoritos" element={<Favoritos />} />
+          <Route path="/produtor/:id" element={<ProdutorPerfil />} />
         </Routes>
       </main>
       <Footer />
