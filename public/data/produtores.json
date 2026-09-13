@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "nome": "João da Silva",
+    "local": "Bacabal – MA",
+    "descricao": "Produção familiar de hortaliças há mais de 15 anos, com foco em técnicas sustentáveis de manejo do solo.",
+    "produtos": "Tomate · Pimentão · Couve"
+  },
+  {
+    "id": 2,
+    "nome": "Maria das Neves",
+    "local": "Bacabal – MA",
+    "descricao": "Cultiva raízes e folhosas sem uso de agrotóxicos, priorizando adubação orgânica e rotação de culturas.",
+    "produtos": "Cenoura · Alface · Rúcula"
+  },
+  {
+    "id": 3,
+    "nome": "Sítio Boa Vista",
+    "local": "Região metropolitana",
+    "descricao": "Produção diversificada de frutas e grãos, com parte da colheita destinada a projetos comunitários locais.",
+    "produtos": "Milho · Banana · Manga"
+  }
+]

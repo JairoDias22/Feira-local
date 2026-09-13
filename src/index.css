@@ -1,0 +1,377 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #EFE3C8;
+  color: #2B2118;
+  font-family: "Work Sans", Arial, sans-serif;
+  line-height: 1.55;
+}
+
+h1, h2, h3 {
+  font-family: "Fraunces", Georgia, serif;
+  color: #24402F;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: #D9A62E;
+  color: #2B2118;
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+  z-index: 100;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+/* Cabeçalho */
+.site-header {
+  background: #D9A62E;
+  border-bottom: 4px solid #2B2118;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.25rem;
+  flex-wrap: wrap;
+}
+.navbar-brand { display: flex; align-items: center; }
+.brand-word {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #2B2118;
+}
+.brand-word em { font-style: normal; color: #24402F; }
+
+.navbar-toggler {
+  display: none;
+  background: none;
+  border: 2px solid #2B2118;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 1.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+.navbar-nav a {
+  font-weight: 600;
+  color: #2B2118;
+}
+.navbar-nav a:hover { color: #24402F; }
+
+.nav-link-favoritos {
+  background: #24402F;
+  color: #fff !important;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.badge-favoritos {
+  background: #B5482B;
+  color: #fff;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  padding: 0.1rem 0.45rem;
+}
+
+@media (max-width: 767px) {
+  .navbar-toggler { display: block; }
+  .navbar-nav {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 0.75rem;
+    padding-top: 1rem;
+  }
+  .navbar-nav.aberto { display: flex; }
+}
+
+/* Botões */
+.btn {
+  display: inline-block;
+  border: none;
+  border-radius: 999px;
+  font-weight: 600;
+  padding: 0.75rem 1.75rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.btn-market { background: #B5482B; color: #fff; }
+.btn-market:hover { background: #9a3a20; }
+.btn-market-outline {
+  background: transparent;
+  color: #24402F;
+  border: 2px solid #24402F;
+}
+.btn-market-outline:hover { background: #24402F; color: #fff; }
+
+/* Hero */
+.hero { padding: 4rem 0; }
+.tag-stamp {
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: #24402F;
+  color: #fff;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 1.25rem;
+}
+.hero-title { font-size: 2.4rem; line-height: 1.15; margin-bottom: 1.25rem; max-width: 700px; }
+.hero-title-accent { color: #B5482B; font-style: italic; font-weight: 500; }
+.hero-lede { font-size: 1.1rem; max-width: 560px; margin-bottom: 1.75rem; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+/* Seções genéricas */
+.section { padding: 4rem 0; }
+.section-head { margin-bottom: 2rem; }
+.section-eyebrow {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #B5482B;
+  margin-bottom: 0.4rem;
+}
+.section-eyebrow--light { color: #D9A62E; }
+.section-title { font-size: 1.9rem; }
+.section-title--light { color: #fff; }
+.section-text { max-width: 560px; }
+
+/* Sobre + clima */
+.section-sobre { background: #EFE3C8; }
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+@media (max-width: 800px) {
+  .sobre-grid { grid-template-columns: 1fr; }
+}
+.clima-card {
+  background: #FBF6E9;
+  border-radius: 14px;
+  box-shadow: 0 4px 0 rgba(43, 33, 24, 0.12);
+  padding: 1.5rem;
+}
+.clima-eyebrow { font-weight: 600; color: #24402F; margin: 0 0 0.75rem 0; }
+.clima-status { font-size: 0.9rem; }
+.clima-erro { color: #B5482B; }
+.clima-dados { display: flex; gap: 1.5rem; align-items: baseline; margin-bottom: 0.75rem; }
+.clima-temperatura { font-family: "Fraunces", Georgia, serif; font-size: 2.2rem; font-weight: 700; color: #24402F; }
+.clima-vento { font-size: 0.9rem; color: #2B2118; }
+.clima-fonte { font-size: 0.75rem; opacity: 0.7; margin: 0; }
+
+/* Produtos */
+.section-produtos { background: #fff; }
+.produtos-controles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.produtos-busca {
+  padding: 0.6rem 1rem;
+  border: 2px solid #24402F;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  min-width: 220px;
+}
+.produtos-filtros { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.filtro-btn {
+  background: #FBF6E9;
+  border: 2px solid #EFE3C8;
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.filtro-btn.filtro-ativo { background: #24402F; color: #fff; border-color: #24402F; }
+.produtos-status { font-size: 0.95rem; color: #5c5142; }
+.produtos-status--light { color: #f2ede3; }
+
+.produtos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1.25rem;
+}
+.product-card {
+  position: relative;
+  background: #FBF6E9;
+  border-radius: 14px;
+  box-shadow: 0 4px 0 rgba(43, 33, 24, 0.12);
+  padding: 1.5rem 1rem 1.25rem 1rem;
+  text-align: center;
+}
+.price-tag {
+  display: inline-block;
+  background: #D9A62E;
+  color: #2B2118;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+}
+.product-thumb { font-size: 2.4rem; line-height: 1; margin: 0 0 0.5rem 0; }
+.product-card h3 { font-size: 1rem; margin-bottom: 0.15rem; }
+.product-producer { font-size: 0.8rem; color: #24402F; margin: 0; }
+
+.favorite-btn {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #B5482B;
+  line-height: 1;
+}
+.favorite-btn.favorito-ativo { color: #B5482B; }
+
+/* Produtores */
+.section-produtores { background: #24402F; }
+.produtores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+.producer-card {
+  background: #FBF6E9;
+  border-radius: 14px;
+  box-shadow: 0 4px 0 rgba(43, 33, 24, 0.12);
+  padding: 1.75rem;
+}
+.producer-avatar {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: #D9A62E;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+.producer-card h3 { font-size: 1.1rem; margin-bottom: 0.15rem; }
+.producer-location { font-size: 0.8rem; color: #B5482B; margin-bottom: 0.75rem; }
+.producer-tags { font-size: 0.8rem; font-weight: 600; color: #24402F; margin: 0.75rem 0 0 0; }
+
+/* Estação */
+.section-estacao { background: #EFE3C8; }
+.estacao-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 2rem;
+  align-items: center;
+}
+@media (max-width: 800px) {
+  .estacao-grid { grid-template-columns: 1fr; }
+}
+.month-select {
+  font-family: "Fraunces", Georgia, serif;
+  font-style: italic;
+  font-size: 1.4rem;
+  color: #B5482B;
+  border: none;
+  border-bottom: 2px dashed #B5482B;
+  background: transparent;
+  padding: 0 0.2rem;
+}
+.season-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0;
+}
+.season-list li {
+  background: #FBF6E9;
+  border: 2px dashed #24402F;
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem;
+  font-weight: 600;
+}
+
+/* Sustentabilidade */
+.section-sustentabilidade { background: #fff; }
+.praticas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+.practice-card {
+  background: #FBF6E9;
+  border-radius: 14px;
+  box-shadow: 0 4px 0 rgba(43, 33, 24, 0.12);
+  padding: 1.75rem;
+  text-align: center;
+}
+.practice-icon { font-size: 2rem; display: block; margin-bottom: 0.75rem; }
+
+/* Impacto */
+.section-impacto { background: #2B2118; color: #fff; }
+.impacto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.5rem;
+  text-align: center;
+}
+.impact-number { font-family: "Fraunces", Georgia, serif; font-size: 2.4rem; font-weight: 700; color: #D9A62E; margin: 0; }
+.impact-label { font-size: 0.85rem; margin: 0; }
+
+/* Favoritos */
+.section-favoritos { background: #fff; min-height: 50vh; }
+.favoritos-vazio {
+  text-align: center;
+  padding: 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Rodapé */
+.site-footer { background: #17291d; color: #f2ede3; padding: 3rem 0 2rem 0; }
+.brand-word--footer { font-size: 1.4rem; margin-bottom: 0.75rem; }
+.brand-word--footer em { color: #D9A62E; }
+.footer-text { font-size: 0.9rem; max-width: 640px; }
+.footer-rule { border-color: rgba(255,255,255,0.15); margin: 1.5rem 0; }
+.footer-copy { font-size: 0.8rem; opacity: 0.7; margin: 0; }
