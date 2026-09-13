@@ -237,11 +237,19 @@ a {
   font-size: 0.9rem;
 }
 .cart-total { font-weight: 600; margin: 1rem 0 0.75rem 0; }
+.cart-acoes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.cart-continuar-btn,
 .cart-checkout-btn {
   display: block;
   width: 100%;
   text-align: center;
-  margin-top: 0.5rem;
+  padding: 0.65rem 1rem;
+}
+.cart-checkout-btn {
   background: #25D366;
   color: #fff;
 }

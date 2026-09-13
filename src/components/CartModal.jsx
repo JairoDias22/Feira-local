@@ -58,16 +58,25 @@ export default function CartModal() {
 
             <p className="cart-total">{totalItens} {totalItens === 1 ? 'item' : 'itens'} no carrinho</p>
 
-            <a
-              className="btn btn-market cart-checkout-btn"
-              href={montarLinkWhatsApp(itens)}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              💬 Contatar / comprar pelo WhatsApp
-            </a>
+            <div className="cart-acoes">
+              <button
+                type="button"
+                className="btn btn-market-outline cart-continuar-btn"
+                onClick={() => setCarrinhoAberto(false)}
+              >
+                Continuar comprando
+              </button>
+              <a
+                className="btn btn-market cart-checkout-btn"
+                href={montarLinkWhatsApp(itens)}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                💬 Comprar pelo WhatsApp
+              </a>
+            </div>
             <p className="cart-aviso">
-              Você será redirecionado ao WhatsApp com a lista de produtos já preenchida, para combinar a compra direto com o produtor.
+              Ao comprar, você será redirecionado ao WhatsApp com a lista de produtos já preenchida, para combinar a compra direto com o produtor.
             </p>
           </>
         )}
