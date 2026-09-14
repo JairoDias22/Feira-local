@@ -161,9 +161,8 @@ atividade. Resumo rápido usando a Vercel:
 
 ## 👥 Equipe
 
-- [Nome do(a) integrante 1]
-- [Nome do(a) integrante 2]
-- [Nome do(a) integrante 3 — se houver]
+- Jairo Dias
+- João Marcos 
 
 ## 🎯 ODS relacionado
 
