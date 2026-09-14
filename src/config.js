@@ -18,3 +18,9 @@ export function montarLinkWhatsApp(itensCarrinho, numeroWhatsApp) {
   const numero = numeroWhatsApp || NUMERO_WHATSAPP_PADRAO
   return `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`
 }
+
+export function montarLinkContatoDireto(nomeProdutor, numeroWhatsApp) {
+  const mensagem = `Olá, ${nomeProdutor}! Vim pela FeiraLocal e queria saber mais sobre seus produtos.`
+  const numero = numeroWhatsApp || NUMERO_WHATSAPP_PADRAO
+  return `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`
+}

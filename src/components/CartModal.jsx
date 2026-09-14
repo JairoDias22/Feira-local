@@ -2,8 +2,13 @@ import { useEffect, useState } from 'react'
 import { useCart } from '../context/CartContext.jsx'
 import { montarLinkWhatsApp } from '../config.js'
 
+// Modal (janela sobreposta) do carrinho. Fica sempre "montado" no App.jsx,
+// mas só aparece de fato quando carrinhoAberto (vindo do CartContext) é
+// true — por isso o "return null" logo abaixo, quando está fechado.
 export default function CartModal() {
   const { itens, totalItens, carrinhoAberto, setCarrinhoAberto, removerDoCarrinho, alterarQuantidade } = useCart()
+  // Busca os produtores à parte (não vem no item do carrinho) para ter
+  // acesso ao número de WhatsApp de cada um na hora de montar os links.
   const [produtores, setProdutores] = useState([])
 
   useEffect(() => {

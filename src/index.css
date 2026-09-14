@@ -493,7 +493,9 @@ a {
   gap: 1.25rem;
   margin-bottom: 1rem;
 }
-.perfil-descricao { max-width: 640px; margin-bottom: 2.5rem; }
+.perfil-descricao { max-width: 640px; margin-bottom: 1.5rem; }
+.perfil-contato-btn { margin-bottom: 2.5rem; background: #25D366; }
+.perfil-contato-btn:hover { background: #1DA851; }
 .perfil-subtitulo {
   font-family: "Fraunces", Georgia, serif;
   color: #24402F;

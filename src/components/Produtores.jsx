@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
+// Lista de produtores da plataforma, carregada via Fetch API. Cada card é
+// um Link inteiro (não só o nome) para o perfil do produtor — clicar em
+// qualquer parte do card leva para /produtor/:id.
 export default function Produtores() {
   const [produtores, setProdutores] = useState([])
   const [carregando, setCarregando] = useState(true)

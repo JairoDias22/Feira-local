@@ -1,5 +1,7 @@
 import Clima from './Clima.jsx'
 
+// Seção "O projeto": texto explicando a situação-problema e o ODS,
+// ao lado do card de clima (que consome uma API externa real).
 export default function Sobre() {
   return (
     <section id="sobre" className="section section-sobre">

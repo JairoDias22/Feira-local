@@ -1,3 +1,5 @@
+// Rodapé simples, presente em todas as páginas (é renderizado direto no
+// App.jsx, fora das rotas).
 export default function Footer() {
   return (
     <footer className="site-footer">

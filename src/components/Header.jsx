@@ -4,6 +4,9 @@ import { useFavorites } from '../context/FavoritesContext.jsx'
 import { useSearch } from '../context/SearchContext.jsx'
 import { useCart } from '../context/CartContext.jsx'
 
+// Cabeçalho fixo, presente em todas as páginas. Reúne busca, favoritos,
+// carrinho e o menu de navegação — por isso depende de três Contexts
+// diferentes (Favorites, Search e Cart).
 export default function Header() {
   const [menuAberto, setMenuAberto] = useState(false)
   const { favoritos } = useFavorites()
@@ -12,6 +15,9 @@ export default function Header() {
   const navigate = useNavigate()
   const location = useLocation()
 
+  // Usado pelos links do menu (O projeto, Produtos...). Em vez de deixar o
+  // navegador tratar o href="#produtos" sozinho (que só funciona se já
+  // estivermos na Home), navegamos manualmente com o React Router.
   function irParaSecao(evento, ancora) {
     evento.preventDefault()
     setMenuAberto(false)
@@ -20,6 +26,9 @@ export default function Header() {
     navigate(`/${ancora}`)
   }
 
+  // Evento disparado a cada tecla digitada no campo de busca (onChange).
+  // Se o usuário começar a buscar estando em outra página (ex: /favoritos),
+  // já leva ele para a Home, na seção de produtos, onde o resultado aparece.
   function aoDigitarBusca(evento) {
     const valor = evento.target.value
     setBusca(valor)

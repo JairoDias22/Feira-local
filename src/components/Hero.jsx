@@ -1,3 +1,6 @@
+// Seção de destaque no topo da página inicial: título, texto de
+// apresentação e os dois botões de ação principal. Não tem estado nem
+// lógica — é só conteúdo estático (por isso nenhum useState/useEffect aqui).
 export default function Hero() {
   return (
     <section id="topo" className="hero">

@@ -6,8 +6,14 @@ export default function Produtos() {
   const [produtos, setProdutos] = useState([])
   const [carregando, setCarregando] = useState(true)
   const [categoria, setCategoria] = useState('Todas')
+  // A busca em si não mora aqui: vem do SearchContext, porque o campo de
+  // texto está no Header, fora deste componente.
   const { busca } = useSearch()
 
+  // Busca os produtos uma única vez, quando o componente é montado
+  // (array de dependências vazio = executa só na primeira renderização).
+  // Isso simula o consumo de uma API: os dados vêm de um arquivo JSON
+  // externo via fetch(), e não de uma lista fixa dentro do código.
   useEffect(() => {
     fetch('/data/produtos.json')
       .then((resposta) => resposta.json())
@@ -16,11 +22,17 @@ export default function Produtos() {
       .finally(() => setCarregando(false))
   }, [])
 
+  // Monta a lista de categorias disponíveis a partir dos próprios produtos
+  // carregados (em vez de escrever "Legumes, Frutas..." fixo no código).
+  // useMemo evita recalcular isso em toda renderização, só quando a lista
+  // de produtos mudar de fato.
   const categorias = useMemo(() => {
     const unicas = new Set(produtos.map((p) => p.categoria))
     return ['Todas', ...unicas]
   }, [produtos])
 
+  // Filtro combinado: o produto só aparece se bater com a busca E com a
+  // categoria selecionada ao mesmo tempo.
   const produtosFiltrados = produtos.filter((produto) => {
     const combinaBusca = produto.nome.toLowerCase().includes(busca.toLowerCase())
     const combinaCategoria = categoria === 'Todas' || produto.categoria === categoria

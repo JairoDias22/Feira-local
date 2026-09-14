@@ -2,6 +2,9 @@ import { Link } from 'react-router-dom'
 import { useFavorites } from '../context/FavoritesContext.jsx'
 import ProductCard from '../components/ProductCard.jsx'
 
+// Página de favoritos (rota "/favoritos"). Não busca nada via fetch: só lê
+// a lista que já está guardada no FavoritesContext (populada a partir dos
+// cliques no coração dos ProductCard, em qualquer página).
 export default function Favoritos() {
   const { favoritos } = useFavorites()
 

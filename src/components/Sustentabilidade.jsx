@@ -1,3 +1,5 @@
+// Conteúdo fixo (não muda em tempo de execução), por isso vive como uma
+// constante simples em vez de vir de um fetch.
 const PRATICAS = [
   { icone: '♻️', titulo: 'Compostagem', texto: 'Restos orgânicos viram adubo, reduzindo o descarte e fortalecendo o solo.' },
   { icone: '🧺', titulo: 'Redução do desperdício', texto: 'Venda direta do produtor ao consumidor diminui perdas na distribuição.' },

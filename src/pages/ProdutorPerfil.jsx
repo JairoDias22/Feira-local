@@ -1,13 +1,20 @@
 import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import ProductCard from '../components/ProductCard.jsx'
+import { montarLinkContatoDireto } from '../config.js'
 
+// Página de perfil de um produtor (rota "/produtor/:id").
+// useParams() lê o ":id" da URL — é assim que sabemos QUAL produtor mostrar.
 export default function ProdutorPerfil() {
   const { id } = useParams()
   const [produtor, setProdutor] = useState(null)
   const [produtos, setProdutos] = useState([])
   const [carregando, setCarregando] = useState(true)
 
+  // Busca os dois arquivos JSON em paralelo (Promise.all é mais rápido do
+  // que fazer um fetch depois do outro) e então filtra localmente:
+  // 1) acha o produtor com esse id;
+  // 2) acha os produtos cujo produtorId bate com esse mesmo id.
   useEffect(() => {
     setCarregando(true)
     Promise.all([
@@ -21,7 +28,7 @@ export default function ProdutorPerfil() {
       })
       .catch((erro) => console.error('Erro ao carregar produtor:', erro))
       .finally(() => setCarregando(false))
-  }, [id])
+  }, [id]) // roda de novo sempre que o :id da URL mudar
 
   if (carregando) {
     return (
@@ -58,6 +65,15 @@ export default function ProdutorPerfil() {
         </div>
 
         <p className="section-text perfil-descricao">{produtor.descricao}</p>
+
+        <a
+          className="btn btn-market perfil-contato-btn"
+          href={montarLinkContatoDireto(produtor.nome, produtor.whatsapp)}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          💬 Falar direto com {produtor.nome}
+        </a>
 
         <h2 className="perfil-subtitulo">Produtos de {produtor.nome}</h2>
         {produtos.length === 0 ? (

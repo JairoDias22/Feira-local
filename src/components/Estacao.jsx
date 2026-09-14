@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+// Dados fixos (não vêm de fetch, ficam direto no código porque são poucos
+// e não mudam): lista de alimentos típicos de cada mês do ano.
 const ALIMENTOS_POR_MES = {
   Janeiro: ['🍇 Uva', '🍍 Abacaxi', '🍅 Tomate', '🥬 Alface'],
   Fevereiro: ['🍉 Melancia', '🥭 Manga', '🌽 Milho', '🥕 Cenoura'],
@@ -16,9 +18,12 @@ const ALIMENTOS_POR_MES = {
 }
 
 const MESES = Object.keys(ALIMENTOS_POR_MES)
+// Detecta o mês atual do sistema para já abrir a seção com um mês relevante,
+// em vez de sempre começar em "Janeiro".
 const MES_ATUAL = MESES[new Date().getMonth()]
 
 export default function Estacao() {
+  // Estado local (não precisa de Context: só este componente usa esse valor).
   const [mesSelecionado, setMesSelecionado] = useState(MES_ATUAL)
 
   return (
