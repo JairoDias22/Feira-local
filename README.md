@@ -1,41 +1,56 @@
-<<<<<<< HEAD
-# 🌱 FeiraLocal — Nota 2 (versão React)
+# 🌱 FeiraLocal
 
-Versão interativa da FeiraLocal, evoluída a partir da interface estática da
-Nota 1 (HTML5 + CSS3 + Bootstrap) para uma aplicação React com
-componentização, gerenciamento de estado, roteamento (SPA) e consumo de
-dados via Fetch API.
+Plataforma web que conecta pequenos produtores da agricultura familiar a
+consumidores, facilitando o acesso a alimentos frescos, locais e da estação
+— sem atravessadores, com o pedido finalizado diretamente com o produtor
+via WhatsApp.
 
-Projeto acadêmico da disciplina **Desenvolvimento Web** (UEMA/Uemanet),
-ligado ao **ODS 2 — Fome Zero e Agricultura Sustentável**.
+Projeto acadêmico desenvolvido para a disciplina **Desenvolvimento Web**
+(UEMA/Uemanet), ligado ao **ODS 2 — Fome Zero e Agricultura Sustentável**
+da Agenda 2030 da ONU.
 
-## ✨ O que mudou em relação à Nota 1
+<p align="center">
+  <img src="feira-local-demonstracao.gif" width="600">
+</p>
 
-- Reorganização de toda a interface em **componentes React** (`Header`,
-  `Hero`, `Produtos`, `Produtores`, `Estacao`, `Sustentabilidade`, `Impacto`, `Footer`)
-- **Roteamento client-side** com `react-router-dom` (rota `/` e `/favoritos`)
-- **Gerenciamento de estado** com Context API (`FavoritesContext`) + `localStorage`
-- **Busca e filtro por categoria** nos produtos (interatividade via estado)
-- **Sistema de favoritos**: clique no ♡ de um produto para salvá-lo; a lista
-  fica disponível na página `/favoritos` e persiste entre sessões
-- **Seletor de mês** na seção "Alimentos da estação", trocando o conteúdo
-  exibido dinamicamente
-- **Consumo de API pública real** (Open-Meteo, sem necessidade de chave) via
-  `fetch`, mostrando o clima atual de Bacabal – MA, com tratamento de
-  estados de carregamento e erro
-- **Consumo de dados internos via Fetch + JSON**: produtos e produtores são
-  carregados de `public/data/produtos.json` e `public/data/produtores.json`
-  com `fetch()`, simulando o consumo de uma API
-- **Contadores animados** no painel de impacto (manipulação de DOM via
-  `requestAnimationFrame`)
+## 📌 Sobre o projeto
+
+Muitos produtores familiares têm dificuldade para vender diretamente ao
+consumidor, dependendo de intermediários que reduzem sua renda. A
+FeiraLocal propõe encurtar essa distância, dando visibilidade a produtores
+locais e permitindo que o próprio consumidor finalize a compra em contato
+direto com quem produziu — um modelo pensado para funcionar bem mesmo em
+contextos rurais, onde o WhatsApp já é o canal de comunicação mais comum.
+
+## 🧭 Funcionalidades
+
+- Catálogo de produtos com **busca** (no cabeçalho, disponível em qualquer
+  página) e **filtro por categoria**
+- **Perfil de cada produtor**, com descrição, localização e todos os
+  produtos que ele vende (nome do produtor é clicável em qualquer lugar do
+  site)
+- Botão de **contato direto** com o produtor pelo WhatsApp, para quem quer
+  só tirar uma dúvida antes de comprar
+- **Carrinho de compras**, com os itens automaticamente **agrupados por
+  produtor** — se você adicionar produtos de gente diferente, o carrinho
+  organiza em blocos, cada um com seu próprio botão de finalizar pedido
+- **Checkout via WhatsApp**: ao comprar, o cliente é redirecionado para uma
+  conversa já com a lista de produtos e quantidades escrita na mensagem
+- **Sistema de favoritos**, com página própria e persistência entre sessões
+  (`localStorage`)
+- **Alimentos da estação** com seletor de mês, trocando o conteúdo exibido
+- Widget de **clima em tempo real** (API pública Open-Meteo)
+- **Painel de impacto** com números animados
+- Layout responsivo (desktop, tablet e celular)
 
 ## 🛠️ Tecnologias
 
-- React 18 + Vite
-- React Router DOM (SPA)
-- Context API (estado global)
-- Fetch API + JSON
-- CSS3 (Grid, Flexbox, media queries)
+- **React 18** + **Vite**
+- **React Router DOM** — roteamento client-side (SPA)
+- **Context API** — estado global (favoritos, busca e carrinho)
+- **Fetch API + JSON** — consumo de dados internos (produtos/produtores) e
+  de uma API pública externa (clima)
+- **CSS3** — Grid, Flexbox e Media Queries, sem framework de estilos
 
 ## 📁 Estrutura
 
@@ -52,8 +67,11 @@ feiralocal-react/
     ├── main.jsx
     ├── App.jsx
     ├── index.css
+    ├── config.js
     ├── context/
-    │   └── FavoritesContext.jsx
+    │   ├── FavoritesContext.jsx
+    │   ├── SearchContext.jsx
+    │   └── CartContext.jsx
     ├── components/
     │   ├── Header.jsx
     │   ├── Hero.jsx
@@ -65,74 +83,27 @@ feiralocal-react/
     │   ├── Estacao.jsx
     │   ├── Sustentabilidade.jsx
     │   ├── Impacto.jsx
+    │   ├── CartModal.jsx
+    │   ├── ScrollToHash.jsx
     │   └── Footer.jsx
     └── pages/
         ├── Home.jsx
-        └── Favoritos.jsx
+        ├── Favoritos.jsx
+        └── ProdutorPerfil.jsx
 ```
+
+Todo o código está comentado, explicando o porquê das principais decisões
+(por que cada estado é local ou global, por que certos dados vêm de fetch e
+outros não, etc.).
 
 ## ▶️ Como rodar localmente
 
 É necessário ter o [Node.js](https://nodejs.org) instalado (versão 18 ou
 superior).
-=======
-# 🌱 FeiraLocal
-
-Plataforma web que conecta pequenos produtores da agricultura familiar a consumidores, facilitando o acesso a alimentos frescos, locais e da estação — sem atravessadores.
-
-Projeto acadêmico desenvolvido para a disciplina **Desenvolvimento Web** (UEMA/Uemanet), ligado ao **ODS 2 — Fome Zero e Agricultura Sustentável** da Agenda 2030 da ONU.
-
-## 📌 Sobre o projeto
-
-Muitos produtores familiares têm dificuldade para vender diretamente ao consumidor, dependendo de intermediários que reduzem sua renda. A FeiraLocal propõe encurtar essa distância, dando visibilidade a produtores locais e facilitando o acesso da comunidade a produtos frescos e sustentáveis.
-
-O projeto é desenvolvido em etapas ao longo da disciplina:
-
-| Etapa | Foco | Status |
-|-------|------|--------|
-| Nota 1 | Estrutura inicial com HTML5, CSS3 e Bootstrap | ✅ Concluída |
-| Nota 2 | Interatividade com JavaScript, DOM, eventos e Fetch API | 🔜 Próxima etapa |
-| Nota 3 | Componentização com React ou Angular e publicação | 🔜 Próxima etapa |
-
-## 🧭 Funcionalidades da versão atual (Nota 1)
-
-- Página inicial com identidade visual própria
-- Catálogo de produtos em destaque
-- Perfis de produtores locais
-- Guia de alimentos da estação
-- Seção de boas práticas de sustentabilidade
-- Painel de impacto da plataforma
-- Layout responsivo (desktop, tablet e celular)
-
-> Nesta etapa, elementos como busca, filtros e favoritos aparecem apenas como parte visual da interface — a interatividade será implementada na Nota 2.
-
-## 🛠️ Tecnologias utilizadas
-
-- **HTML5** — estrutura semântica (`header`, `nav`, `main`, `section`, `article`, `footer`)
-- **CSS3** — Box Model, Flexbox e Media Queries para responsividade
-- **Bootstrap 5** — grid responsivo e componentes de navegação
-- **Bootstrap Icons** — ícones utilizados nas seções
-
-## 📁 Estrutura de pastas
-
-```
-feiralocal/
-├── index.html
-├── css/
-│   └── style.css
-├── img/
-└── relatorio_feiralocal.pdf
-```
-
-## ▶️ Como executar
-
-Não é necessário instalação. Basta clonar o repositório e abrir o arquivo `index.html` em qualquer navegador:
->>>>>>> ad715a28a3d1fc253ce21a7888249ae02e271162
 
 ```bash
-git clone https://github.com/seu-usuario/feiralocal.git
-cd feiralocal
-<<<<<<< HEAD
+git clone https://github.com/JairoDias22/Feira-local.git
+cd Feira-local
 npm install
 npm run dev
 ```
@@ -148,21 +119,25 @@ npm run build
 
 Isso cria uma pasta `dist/` com os arquivos finais, prontos para hospedagem.
 
+### Configurando o WhatsApp
+
+Antes de usar o carrinho e o contato com produtores, configure os números
+reais:
+
+- `src/config.js` — número padrão de fallback
+- `public/data/produtores.json` — número de cada produtor (campo `whatsapp`)
+
+Formato: código do país + DDD + número, só dígitos (ex: `5598912345678`).
+
 ## 🌐 Publicação
 
-O passo a passo completo de publicação está no relatório em slides desta
-atividade. Resumo rápido usando a Vercel:
-
-1. Suba este projeto para um repositório no GitHub
-2. Crie uma conta na [Vercel](https://vercel.com) com o GitHub
-3. Clique em "Add New Project", selecione o repositório
-4. A Vercel detecta automaticamente que é um projeto Vite — clique em "Deploy"
-5. Em cerca de 1 minuto, a Vercel gera um link público da aplicação
+Aplicação publicada com [Vercel](https://vercel.com), a partir deste
+repositório (deploy automático a cada `git push` na branch `main`).
 
 ## 👥 Equipe
 
 - Jairo Dias
-- João Marcos 
+- João Marcos
 
 ## 🎯 ODS relacionado
 
@@ -172,21 +147,3 @@ atividade. Resumo rápido usando a Vercel:
 
 Projeto desenvolvido para fins acadêmicos — Universidade Estadual do
 Maranhão (UEMA/Uemanet).
-=======
-```
-
-Depois é só abrir o `index.html` (duplo clique ou "Abrir com" o navegador de sua preferência).
-
-
-## 📄 Relatório técnico
-
-O relatório técnico completo do projeto (situação-problema, ODS, público-alvo, funcionalidades e capturas de tela) está disponível em [`relatorio_feiralocal.pdf`](./relatorio_feiralocal.pdf).
-
-## 🎯 ODS relacionado
-
-**ODS 2 — Fome Zero e Agricultura Sustentável**, um dos 17 Objetivos de Desenvolvimento Sustentável da ONU.
-
----
-
-Projeto desenvolvido para fins acadêmicos — Universidade Estadual do Maranhão (UEMA/Uemanet).
->>>>>>> ad715a28a3d1fc253ce21a7888249ae02e271162
