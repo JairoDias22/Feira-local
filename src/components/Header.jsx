@@ -26,14 +26,25 @@ export default function Header() {
     navigate(`/${ancora}`)
   }
 
-  // Evento disparado a cada tecla digitada no campo de busca (onChange).
-  // Se o usuário começar a buscar estando em outra página (ex: /favoritos),
-  // já leva ele para a Home, na seção de produtos, onde o resultado aparece.
+   // Evento disparado a cada tecla digitada no campo de busca (onChange).
   function aoDigitarBusca(evento) {
     const valor = evento.target.value
     setBusca(valor)
+    if (valor.trim() === '') return
+
     if (location.pathname !== '/') {
-      navigate('/#produtos')
+      // Ainda não está na Home: navega para lá, o ScrollToHash cuida
+      // da rolagem inicial assim que a seção existir no DOM.
+      navigate('/#produtos', { replace: true })
+      return
+    }
+
+    // Já está na Home: rola direto para a seção. Não dá pra depender do
+    // hash aqui, porque ele já pode estar em "#produtos" e não mudaria
+    // de novo — o que faria o ScrollToHash não disparar.
+    const secaoProdutos = document.getElementById('produtos')
+    if (secaoProdutos) {
+      secaoProdutos.scrollIntoView({ behavior: 'smooth' })
     }
   }
 
