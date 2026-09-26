@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 
 // Coordenadas aproximadas de Bacabal - MA
-const LATITUDE = -4.2286
-const LONGITUDE = -44.7917
+const LATITUDE = -3.25707
+const LONGITUDE = -45.65
 const URL_API = `https://api.open-meteo.com/v1/forecast?latitude=${LATITUDE}&longitude=${LONGITUDE}&current_weather=true`
 
 export default function Clima() {
@@ -44,7 +44,7 @@ export default function Clima() {
 
   return (
     <div className="clima-card">
-      <p className="clima-eyebrow">Clima agora em Bacabal – MA</p>
+      <p className="clima-eyebrow">Clima agora em Zé Doca – MA</p>
       {carregando && <p className="clima-status">Consultando a previsão…</p>}
       {erro && <p className="clima-status clima-erro">{erro}</p>}
       {clima && !carregando && !erro && (
